@@ -1,0 +1,357 @@
+// more flows
+
+#contentprovider
+<=android.database.Cursor
+<=android.content.ContentProvider:query(
+	<=android.net.Uri uri,
+	<=java.lang.String[] projection,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs,
+	<=java.lang.String sortOrder) {
+	label(return, uri);
+}
+
+#contentprovider
+<=android.database.Cursor
+<=android.content.ContentProvider:query(
+	<=android.net.Uri uri,
+	<=java.lang.String[] projection,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs,
+	<=java.lang.String sortOrder,
+	<=android.os.CancellationSignal signal) {
+	label(return, uri);
+}
+
+#contentprovider
+int <=android.content.ContentProvider:bulkInsert(
+	<=android.net.Uri uri, <=android.content.ContentValues[] values) {
+	output(uri, values, values);
+	constrain(uri);
+}
+
+#contentproviderdelete
+int <=android.content.ContentProvider:delete(
+	<=android.net.Uri uri,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs) {
+	output(uri, selection, selection);
+	output(uri, selectionArgs, selectionArgs);
+	constrain(uri);
+}
+
+#contentprovider
+<=android.net.Uri <=android.content.ContentProvider:insert(
+	<=android.net.Uri uri, <=android.content.ContentValues values) {
+	output(uri, values, values);
+	constrain(uri);
+}
+
+#contentprovider
+int <=android.content.ContentProvider:update(
+	<=android.net.Uri uri,
+	<=android.content.ContentValues values,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs) {
+	output(uri, values, values);
+	output(uri, selection, selection);
+	output(uri, selectionArgs, selectionArgs);
+	constrain(uri);
+}
+
+#contentresolver
+<=android.database.Cursor
+<=android.content.ContentResolver:query(
+	<=android.net.Uri uri,
+	<=java.lang.String[] projection,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs,
+	<=java.lang.String sortOrder) {
+	label(return, uri);
+}
+
+#contentresolver
+<=android.database.Cursor
+<=android.content.ContentResolver:query(
+	<=android.net.Uri uri,
+	<=java.lang.String[] projection,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs,
+	<=java.lang.String sortOrder,
+	<=android.os.CancellationSignal signal) {
+	label(return, uri);
+}
+
+#contentresolver
+int <=android.content.ContentResolver:bulkInsert(
+	<=android.net.Uri uri, <=android.content.ContentValues[] values) {
+	output(uri, values, values);
+	constrain(uri);
+}
+
+#contentresolverdelete
+int <=android.content.ContentResolver:delete(
+	<=android.net.Uri uri,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs) {
+	output(uri, selection, selection);
+	output(uri, selectionArgs, selectionArgs);
+	constrain(uri);
+}
+
+#contentresolver
+<=android.net.Uri <=android.content.ContentResolver:insert(
+	<=android.net.Uri uri, <=android.content.ContentValues values) {
+	output(uri, values, values);
+	constrain(uri);
+}
+
+#contentresolver
+int <=android.content.ContentResolver:update(
+	<=android.net.Uri uri,
+	<=android.content.ContentValues values,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs) {
+	output(uri, values, values);
+	output(uri, selection, selection);
+	output(uri, selectionArgs, selectionArgs);
+	constrain(uri);
+}
+
+#identifier
+<=java.lang.String =android.os.SystemProperties:native_get(
+	<=java.lang.String key, <=java.lang.String defValue) {
+	input(return, key);
+}
+
+#crypto
+void <=org.bouncycastle2.openpgp.PGPEncryptedDataGenerator:<init>(
+    int encAlgorithm,
+    <=java.security.SecureRandom rand,
+    <=java.lang.String provider) {
+}
+
+#javascript
+<=org.mozilla.javascript.ContextFactory <=org.mozilla.javascript.ContextFactory:getGlobal() {
+
+}
+
+#reflection
+<=java.lang.Class <=java.lang.Class:forName(<=java.lang.String className, boolean initializeBoolean, java.lang.ClassLoader classLoader) {
+
+}
+
+#reflection
+<=dalvik.system.DexFile <=dalvik.system.DexFile:loadDex(
+    <=java.lang.String sourcePathName,
+    <=java.lang.String outputPathName,
+    int flags) {
+}
+
+#abortbroadcast
+void <=android.content.BroadcastReceiver:abortBroadcast() {
+}
+
+#vibrator
+void <=android.os.Vibrator:vibrate(long milliseconds) {
+
+}
+
+#vibrator
+void <=android.os.Vibrator:vibrate(long[] pattern, int repeat) {
+
+}
+
+#process
+<=java.lang.Process <=java.lang.Runtime:exec(<=java.lang.String[] progArray, <=java.lang.String[] envp) {
+}
+
+#process
+<=java.lang.Process <=java.lang.Runtime:exec(<=java.lang.String prog, <=java.lang.String[] envp, <=java.io.File directory) {
+}
+
+#process
+<=java.lang.Process <=java.lang.Runtime:exec(<=java.lang.String[] progArray, <=java.lang.String[] envp, <=java.io.File directory) {
+}
+
+#process
+<=java.lang.Process <=java.lang.Runtime:exec(<=java.lang.String prog, <=java.lang.String[] envp) {
+}
+
+#process
+<=java.lang.Process <=java.lang.Runtime:exec(<=java.lang.String prog) {
+}
+
+#process
+<=java.lang.Process <=java.lang.Runtime:exec(<=java.lang.String[] progArray) {
+}
+
+#alarm
+void <=android.app.AlarmManager:set(int type, long triggerAtMillis, <=android.app.PendingIntent operation) {
+
+}
+
+#camera
+<=android.hardware.Camera <=android.hardware.Camera:open() {
+
+}
+
+#camera
+<=android.hardware.Camera <=android.hardware.Camera:open(int cameraId) {
+
+}
+
+#camera
+void <=android.hardware.Camera:addCallbackBuffer(byte[] callbackBuffer) {
+
+}
+
+#aidl
+boolean <=android.os.Binder:onTransact(int code, <=android.os.Parcel data, <=android.os.Parcel reply, int flags) {
+
+}
+
+#storagedelete
+boolean <=java.io.File:delete() {
+}
+
+#log
+int =android.util.Log:d(<=java.lang.String tag, <=java.lang.String msg) {
+	output(this, msg, msg);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:d(<=java.lang.String tag,
+	<=java.lang.String msg, <=java.lang.Throwable ex) {
+	output(this, msg, msg);
+	output(this, ex, ex);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:e(<=java.lang.String tag, <=java.lang.String msg) {
+	output(this, msg, msg);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:e(<=java.lang.String tag,
+	<=java.lang.String msg, <=java.lang.Throwable ex) {
+	output(this, msg, msg);
+	output(this, ex, ex);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:i(<=java.lang.String tag, <=java.lang.String msg) {
+	output(this, msg, msg);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:i(<=java.lang.String tag,
+	<=java.lang.String msg, <=java.lang.Throwable ex) {
+	output(this, msg, msg);
+	output(this, ex, ex);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:v(<=java.lang.String tag, <=java.lang.String msg) {
+	output(this, msg, msg);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:v(<=java.lang.String tag,
+	<=java.lang.String msg, <=java.lang.Throwable ex) {
+	output(this, msg, msg);
+	output(this, ex, ex);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:w(<=java.lang.String tag, <=java.lang.String msg) {
+	output(this, msg, msg);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:w(<=java.lang.String tag,
+	<=java.lang.String msg, <=java.lang.Throwable ex) {
+	output(this, msg, msg);
+	output(this, ex, ex);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:wtf(<=java.lang.String tag, <=java.lang.String msg) {
+	output(this, msg, msg);
+	constrain(msg);
+}
+
+#log
+int =android.util.Log:wtf(<=java.lang.String tag,
+	<=java.lang.String msg, <=java.lang.Throwable ex) {
+	output(this, msg, msg);
+	output(this, ex, ex);
+	constrain(msg);
+}
+
+#storage
+<=java.io.File =android.os.Environment:getExternalStoragePublicDirectory(<=java.lang.String type) {
+}
+
+#sms
+<=java.lang.String =android.telephony.SmsMessage:getMessageBody() {
+}
+
+#sms
+<=java.lang.String =android.telephony.SmsMessage:getOriginatingAddress() {
+}
+
+#drawontop
+void <=android.widget.Toast:setView(android.view.View view){
+
+}
+
+#nfc
+android.nfc.NfcAdapter <=android.nfc.NfcAdapter:getDefaultAdapter(android.content.Context context){
+
+}
+
+#screenshot
+android.graphics.Bitmap <=android.view.View:getDrawingCache(){
+
+}
+
+#speech
+android.speech.SpeechRecognizer <=android.speech.SpeechRecognizer:createSpeechRecognizer(android.content.Context context){
+
+}
+
+#drawontop
+void <=android.view.Window:addFlags(int flags){
+
+}
+
+#storagedelete
+int <=android.content.ContentProvider:delete(
+	<=android.net.Uri uri,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs) {
+	output(uri, selection, selection);
+	output(uri, selectionArgs, selectionArgs);
+	constrain(uri);
+}
+
+#audiostream
+void <=android.net.rtp.AudioStream:join(<=android.net.rtp.AudioGroup group) {
+
+}
+
+#audiostream
+void <=android.net.rtp.AudioStream:setMode(int mode) {
+
+}

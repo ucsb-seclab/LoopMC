@@ -1,0 +1,3433 @@
+// model.db
+
+#iterator
+* <=*.*:hasNext(*) {
+}
+
+#iterator
+* <=*.*:iterator(*) {
+}
+
+#iterator
+* <=*android\.support\.v4\.util\..*:*.*(*) {
+}
+
+#ioRead
+* <=java.util.Scanner:*.*(*) {
+}
+
+#ioRead
+* <=java.util.zip.ZipFile:*get.*(*){
+}
+
+#genericFileOp
+* <=java.util.zip.ZipFile:*.*(*) {
+}
+
+#genericFileOp
+* <=java.io.FileDescriptor:*.*(*) {
+}
+
+#remotecode
+* <=java.util.jar.JarFile:*.*(*) {
+}
+
+#remotecode
+* <=java.security.ProtectionDomain:getCodeSource(*) {
+}
+
+#permissions
+* <=java.security.ProtectionDomain:getPermissions(*) {
+}
+
+#remotecode
+* <=javax.jmdns.impl.ServiceEventImpl:*.*(*) {
+}
+
+#remotecode
+* <=java.security.CodeSource:getLocation(*) {
+}
+
+#remotecode
+* <=*java\.util\.jar\..*:*.*(*) {
+}
+
+#remotecode
+* <=*com\.android\.dx.*:*.*(*) {
+}
+
+#genericFileOp
+* <=*java\.util\.zip\..*:*.*(*) {
+}
+
+#ipaddress
+* <=java.net.InetAddress:getByAddress(*) {
+}
+
+#ipaddress
+* <=java.net.Inet4Address:*.*(*) {
+}
+
+#ipaddress
+* <=java.net.Inet6Address:*.*(*) {
+}
+
+#ipaddress
+* <=java.net.InetAddress:getByAddress(*) {
+}
+
+#socketaddress
+* <=java.net.InetSocketAddress:createUnresolved(*) {
+}
+
+#socketaddress
+* <=java.net.InetSocketAddress:*.*(*) {
+}
+
+#deviceAdmin
+* <=android.app.admin.DevicePolicyManager:*.*(*) {
+}
+
+#socketaddress
+void <=android.net.LocalSocketAddress:<init>(<=java.lang.String name) {
+	label(this, name);
+}
+
+#socketaddress
+void <=android.net.LocalSocketAddress:<init>(
+	<=java.lang.String name, <=android.net.LocalSocketAddress$Namespace ns) {
+	label(this, name);
+}
+
+#socketcreate
+void <=java.net.Socket:<init>(<=java.lang.String host, int port) {
+	label(this, host);
+}
+
+#uri
+void <=java.net.URI:<init>(<=java.lang.String uri) {
+	label(this, uri);
+}
+
+#uri
+void <=java.net.URI:<init>(
+	<=java.lang.String scheme,
+	<=java.lang.String ssp,
+	<=java.lang.String fragment) {
+	label(this, scheme, ssp, fragment);
+}
+
+#uri
+void <=java.net.URI:<init>(
+	<=java.lang.String scheme,
+	<=java.lang.String userInfo,
+	<=java.lang.String host,
+	int port,
+	<=java.lang.String path,
+	<=java.lang.String query,
+	<=java.lang.String fragment) {
+	label(this, scheme, host, port, path, query, fragment);
+}
+
+#uri
+void <=java.net.URI:<init>(
+	<=java.lang.String scheme,
+	<=java.lang.String host,
+	<=java.lang.String path,
+	<=java.lang.String fragment) {
+	label(this, scheme, host, path, fragment);
+}
+
+#uri
+void <=java.net.URI:<init>(
+	<=java.lang.String scheme,
+	<=java.lang.String authority,
+	<=java.lang.String path,
+	<=java.lang.String query,
+	<=java.lang.String fragment) {
+	label(this, scheme, authority, path, query, fragment);
+}
+
+#uri
+<=java.net.URI =java.net.URI:create(<=java.lang.String uri) {
+	label(return, uri);
+}
+
+#uri
+<=android.net.Uri =android.net.Uri:fromParts(
+	<=java.lang.String scheme,
+	<=java.lang.String ssp,
+	<=java.lang.String fragment) {
+	label(return, scheme, ssp, fragment);
+}
+
+#uri
+<=android.net.Uri =android.net.Uri:parse(<=java.lang.String uri) {
+	label(return, uri);
+}
+
+#uri
+<=android.net.Uri =android.net.Uri:withAppendedPath(
+	<=android.net.Uri baseUri, <=java.lang.String pathSegment) {
+	label(return, baseUri, pathSegment);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:appendEncodedPath(
+	<=java.lang.String newSegment) {
+	label(this, newSegment);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:appendPath(
+	<=java.lang.String newSegment) {
+	label(this, newSegment);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:appendQueryParameter(
+	<=java.lang.String key, <=java.lang.String value) {
+	label(this, key, value);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:authority(
+	<=java.lang.String authority) {
+	label(this, authority);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:clearQuery() {
+	clear(this);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:encodedAuthority(
+	<=java.lang.String authority) {
+	label(this, authority);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:encodedFragment(
+	<=java.lang.String fragment) {
+	label(this, fragment);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:encodedOpaquePart(
+	<=java.lang.String opaquePart) {
+	label(this, opaquePart);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:encodedPath(
+	<=java.lang.String path) {
+	label(this, path);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:encodedQuery(
+	<=java.lang.String query) {
+	label(this, query);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:fragment(
+	<=java.lang.String fragment) {
+	label(this, fragment);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:opaquePart(
+	<=java.lang.String opaquePart) {
+	label(this, opaquePart);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:path(
+	<=java.lang.String path) {
+	label(this, path);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:query(
+	<=java.lang.String query) {
+	label(this, query);
+}
+
+#uri
+<=android.net.Uri$Builder <=android.net.Uri$Builder:scheme(
+	<=java.lang.String scheme) {
+	label(this, scheme);
+}
+
+#uri
+void <=java.net.URL:<init>(<=java.lang.String spec) {
+	label(this, spec);
+}
+
+#uri
+void <=java.net.URL:<init>(
+	<=java.lang.String protocol,
+	<=java.lang.String host,
+	int port,
+	<=java.lang.String path) {
+	label(this, protocol, host, port, path);
+}
+
+#uri
+void <=java.net.URL:<init>(
+	<=java.lang.String protocol,
+	<=java.lang.String host,
+	int port,
+	<=java.lang.String path,
+	<=java.net.URLStreamHandler handler) {
+	label(this, protocol, host, port, path);
+}
+
+#uri
+void <=java.net.URL:<init>(
+	<=java.lang.String protocol,
+	<=java.lang.String host,
+	<=java.lang.String path) {
+	label(this, protocol, host, path);
+}
+
+#uri
+void <=java.net.URL:<init>(<=java.net.URL context, <=java.lang.String spec) {
+	label(this, context, spec);
+}
+
+#uri
+* <=java.net.URL:*.*(*) {
+}
+
+#uri
+* <=java.net.URI:*.*(*) {
+}
+
+#uri
+void <=java.net.URL:<init>(
+	<=java.net.URL context,
+	<=java.lang.String spec,
+	<=java.net.URLStreamHandler handler) {
+	label(this, context, spec);
+}
+
+#http
+void <=org.apache.http.HttpHost:<init>(<=java.lang.String host) {
+	label(this, host);
+}
+
+#http
+void <=org.apache.http.HttpHost:<init>(<=java.lang.String host, int port) {
+	label(this, host, port);
+}
+
+#httPost
+void <=org.apache.http.HttpHost:<init>(
+	<=java.lang.String host, int port, <=java.lang.String scheme) {
+	label(this, host, port, scheme);
+}
+
+#httpGet
+void <=org.apache.http.client.methods.HttpGet:<init>(<=java.lang.String uri) {
+	label(this, uri);
+}
+
+#httpGet
+void <=org.apache.http.client.methods.HttpGet:<init>(<=java.net.URI uri) {
+	label(this, uri);
+}
+
+#httpPost
+void <=org.apache.http.client.methods.HttpPost:<init>(<=java.lang.String uri) {
+	label(this, uri);
+}
+
+#httpPost
+void <=org.apache.http.client.methods.HttpPost:<init>(<=java.net.URI uri) {
+	label(this, uri);
+}
+
+#httpRead
+void <=org.apache.http.message.BasicHttpRequest:<init>(
+	<=java.lang.String method,
+	<=java.lang.String uri) {
+	label(this, method, uri);
+}
+
+#httpRead
+void <=org.apache.http.message.BasicHttpRequest:<init>(
+	<=java.lang.String method,
+	<=java.lang.String uri,
+	<=org.apache.http.ProtocolVersion ver) {
+	label(this, method, uri);
+}
+
+#authentication
+* <=java.net.Authenticator:*.*(*) {
+
+}
+
+#authentication
+* <=java.net.PasswordAuthentication:*.*(*) {
+
+}
+
+#networkRead
+* <=java.net.ContentHandler:*.*(*) {
+
+}
+
+#networkcookie
+* <=java.net.CookieHandler:*.*(*) {
+
+}
+
+#networkcookie
+* <=java.net.CookieManager:*.*(*) {
+
+}
+
+#udpSend
+* <=java.net.DatagramSocket:*send.*(*) {
+
+}
+
+#udpReceive
+* <=java.net.DatagramSocket:*receive.*(*) {
+
+}
+
+#udpSocket
+* <=java.net.DatagramSocket:*.*(*) {
+
+}
+
+#udpPacket
+* <=java.net.DatagramPacket:*.*(*) {
+
+}
+
+#udpSend
+* <=java.net.DatagramSocketImpl:*send.*(*) {
+
+}
+
+#udpReceive
+* <=java.net.DatagramSocketImpl:*receive.*(*) {
+
+}
+
+#udpHandler
+* <=java.net.DatagramSocketImpl:*.*(*) {
+
+}
+
+#udp
+* <=*java\.net\.Datagram.*:*.*(*) {
+
+}
+
+#httpConnection
+* <=java.net.HttpURLConnection:*.*(*) {
+
+}
+
+#httpCookieRead
+* <=java.net.HttpCookie:*get.*(*) {
+
+}
+
+#httpCookieWrite
+* <=java.net.HttpCookie:*set.*(*) {
+
+}
+
+#httpCookie
+* <=java.net.HttpCookie:*.*(*) {
+
+}
+
+#httpCookie
+* <=org.apache.http.impl.cookie.BasicClientCookie:*.*(*) {
+
+}
+
+#remotecode
+* <=java.net.JarURLConnection:*.*(*) {
+
+}
+
+#networkpermission
+* <=java.net.NetPermission:*.*(*) {
+
+}
+
+#networkpermission
+* <=java.net.SocketPermission:*.*(*) {
+
+}
+
+#network
+* <=*java\.net\..*:*.*(*) {
+
+}
+
+#serversocket
+* <=*javax\.net\..*:*.*(*) {
+
+}
+
+#accessDeviceNetworkInfo
+* <=android.net.ConnectivityManager:*^get|^is(*) {
+}
+
+#accessDeviceNetworkInfo
+* <=android.net.NetworkInfo:*^get|^is(*) {
+}
+
+#modifyDeviceNetworkInfo
+* <=android.net.ConnectivityManager:*^start|^stop|^set(*) {
+}
+
+#ioRead
+<=java.io.InputStream
+<=android.content.res.AssetManager:open(<=java.lang.String path) {
+	label(return, path);
+}
+
+#fileOpen
+<=android.content.res.AssetFileDescriptor
+<=android.content.ContentProvider:openAssetFile(
+	<=android.net.Uri uri, <=java.lang.String mode) {
+	label(return, uri);
+}
+
+#fileOpen
+<=android.os.ParcelFileDescriptor
+<=android.content.ContentProvider:openFile(
+	<=android.net.Uri uri, <=java.lang.String mode) {
+	label(return, uri);
+}
+
+#fileOpen
+<=java.lang.Object
+<=android.content.ContentProvider:openPipeHelper(
+	<=android.net.Uri uri,
+	<=java.lang.String mimeType,
+	<=android.os.Bundle opts,
+	<=java.lang.Object args,
+	<=java.lang.Object func) {
+	label(return, uri);
+}
+
+#fileOpen
+<=android.content.res.AssetFileDescriptor
+<=android.content.ContentProvider:openTypedAssetFile(
+	<=android.net.Uri uri,
+	<=java.lang.String mimeTypeFilter,
+	<=android.os.Bundle ops) {
+	label(return, uri);
+}
+
+#contentproviderQuery
+<=android.database.Cursor
+<=android.content.ContentProvider:query(
+	<=android.net.Uri uri,
+	<=java.lang.String[] projection,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs,
+	<=java.lang.String sortOrder) {
+	label(return, uri);
+}
+
+#contentproviderQuery
+<=android.database.Cursor
+<=android.content.ContentProvider:query(
+	<=android.net.Uri uri,
+	<=java.lang.String[] projection,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs,
+	<=java.lang.String sortOrder,
+	<=android.os.CancellationSignal signal) {
+	label(return, uri);
+}
+
+#fileOpen
+<=android.content.res.AssetFileDescriptor
+<=android.content.ContentResolver:openAssetFileDescriptor(
+	<=android.net.Uri uri, <=java.lang.String mode) {
+	label(return, uri);
+}
+
+#fileOpen
+<=android.os.ParcelFileDescriptor
+<=android.content.ContentResolver:openFileDescriptor(
+	<=android.net.Uri uri, <=java.lang.String mode) {
+	label(return, uri);
+}
+
+#ioRead
+<=java.io.InputStream
+<=android.content.ContentResolver:openInputStream(<=android.net.Uri uri) {
+	label(return, uri);
+}
+
+#fileOpen
+<=android.content.res.AssetFileDescriptor
+<=android.content.ContentResolver:openTypedAssetFileDescriptor(
+	<=android.net.Uri uri, <=java.lang.String mimeType, <=android.os.Bundle opts) {
+	label(return, uri);
+}
+
+#contentproviderQuery
+<=android.database.Cursor <=android.app.Activity:managedQuery(
+	<=android.net.Uri uri,
+	<=java.lang.String[] projection,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs,
+	<=java.lang.String sortOrder) {
+	label(return, uri);
+}
+
+#androiddatabase
+void <=android.content.CursorLoader:<init>(
+	<=android.content.Context context,
+	<=android.net.Uri uri,
+	<=java.lang.String[] projection,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs,
+	<=java.lang.String sortOrder) {
+	label(this, uri);
+}
+
+#androiddatabase
+void <=android.content.CursorLoader:setUri(<=android.net.Uri uri) {
+	label(this, uri);
+}
+
+#webkit
+void <=android.webkit.WebView:loadData(
+	<=java.lang.String data,
+	<=java.lang.String mimeType,
+	<=java.lang.String encoding) {
+	output(this, data, data);
+	constrain(data);
+}
+
+#webkit
+void <=android.webkit.WebView:loadDataWithBaseURL(
+	<=java.lang.String baseUrl,
+	<=java.lang.String data,
+	<=java.lang.String mimeType,
+	<=java.lang.String encoding,
+	<=java.lang.String historyUrl) {
+	output(baseUrl, baseUrl, data);
+	output(baseUrl, data, data);
+	constrain(baseUrl);
+	constrain(data);
+}
+
+#networkconnect
+void <=android.webkit.WebView:loadUrl(<=java.lang.String url) {
+	output(url, url, url);
+	constrain(url);
+}
+
+#networkconnect
+void <=android.webkit.WebView:loadUrl(
+	<=java.lang.String url,
+	<=java.util.Map additionalHttpHeaders) {
+	output(url, url, url);
+	constrain(url);
+}
+
+#networkconnect
+void <=android.webkit.WebView:postUrl(<=java.lang.String url, byte[] postData) {
+	output(url, url, url, postData);
+	output(url, postData, postData);
+	constrain(url);
+}
+
+#networkconnect
+<=org.apache.http.HttpResponse <=org.apache.http.client.HttpClient:execute(
+	<=org.apache.http.HttpHost target,
+	<=org.apache.http.HttpRequest request) {
+	input(target, return);
+	input(target, request);
+	output(return, request, request);
+	constrain(target);
+}
+
+#networkconnect
+<=org.apache.http.HttpResponse <=org.apache.http.client.HttpClient:execute(
+	<=org.apache.http.HttpHost target,
+	<=org.apache.http.HttpRequest request,
+	<=org.apache.http.protocol.HttpContext context) {
+	input(target, return);
+	input(request, return);
+	//input(target, request);
+	output(target, request, request);
+	constrain(target);
+}
+
+#networkconnect
+<=java.lang.Object <=org.apache.http.client.HttpClient:execute(
+	<=org.apache.http.HttpHost target,
+	<=org.apache.http.HttpRequest request,
+	<=org.apache.http.client.ResponseHandler responseHandler) {
+	input(target, return);
+	input(request, return);
+	output(target, request, request);
+	constrain(target);
+}
+
+#networkconnect
+<=java.lang.Object <=org.apache.http.client.HttpClient:execute(
+	<=org.apache.http.HttpHost target,
+	<=org.apache.http.HttpRequest request,
+	<=org.apache.http.client.ResponseHandler responseHandler,
+	<=org.apache.http.protocol.HttpContext context) {
+	input(target, return);
+	input(request, return);
+	output(target, request, request);
+	constrain(target);
+}
+
+#networkconnect
+<=org.apache.http.HttpResponse <=org.apache.http.client.HttpClient:execute(
+	<=org.apache.http.client.methods.HttpUriRequest request) {
+	input(request, return);
+	output(request, request, request);
+	constrain(request);
+}
+
+#networkconnect
+<=org.apache.http.HttpResponse <=org.apache.http.client.HttpClient:execute(
+	<=org.apache.http.client.methods.HttpUriRequest request,
+	<=org.apache.http.protocol.HttpContext context) {
+	input(request, return);
+	output(request, request, request);
+	constrain(request);
+}
+
+#networkconnect
+<=java.lang.Object <=org.apache.http.client.HttpClient:execute(
+	<=org.apache.http.client.methods.HttpUriRequest request,
+	<=org.apache.http.client.ResponseHandler responseHandler) {
+	input(request, return);
+	output(request, request, request);
+	constrain(request);
+}
+
+#networkconnect
+<=java.lang.Object <=org.apache.http.client.HttpClient:execute(
+	<=org.apache.http.client.methods.HttpUriRequest request,
+	<=org.apache.http.client.ResponseHandler responseHandler,
+	<=org.apache.http.protocol.HttpContext context) {
+	input(request, return);
+	output(request, request, request);
+	constrain(request);
+}
+
+#networkconnect
+<=org.apache.http.HttpResponse
+<=org.apache.http.protocol.HttpRequestExecutor:execute(
+	<=org.apache.http.HttpRequest request,
+	<=org.apache.http.HttpClientConnection conn,
+	<=org.apache.http.protocol.HttpContext context) {
+	input(conn, return);
+	input(request, return);
+	output(conn, request, request);
+	constrain(conn);
+}
+
+#locationRead
+double <=android.location.Location:getLatitude() {
+	input(this, return);
+}
+
+#locationRead
+* <=android.location.Location:*^get|^has|^convert|^describe(*) {
+}
+
+#locationModify
+* <=android.location.Location:*^set|^remove(*) {
+}
+
+#locationCompute
+* <=android.location.Location:*^distance|^bearing(*) {
+}
+
+#locationManager
+* <=android.location.LocationManager:*.*(*) {
+}
+
+#locationRead
+double <=android.location.Location:getLongitude() {
+	input(this, return);
+}
+
+#locationRead
+int <=com.google.android.maps.GeoPoint:getLatitudeE6() {
+	input(this, return);
+}
+
+#locationRead
+int <=com.google.android.maps.GeoPoint:getLongitudeE6() {
+	input(this, return);
+}
+
+#locationRead
+boolean <=android.media.ExifInterface:getLatLong(float[] data) {
+	input(this, data);
+}
+
+#locationRead
+<=java.lang.String <=android.media.ExifInterface:getAttribute(<=java.lang.String tag) {
+	input(this, return);
+	input(tag, return);
+}
+
+#locationRead
+int <=android.media.ExifInterface:getAttributeInt(<=java.lang.String tag, int defaultValue) {
+	input(this, return);
+	input(tag, return);
+}
+
+#locationRead
+double <=android.media.ExifInterface:getAttributeDouble(<=java.lang.String tag, double defaultValue) {
+	input(this, return);
+	input(tag, return);
+}
+
+#camera
+void <=android.hardware.Camera$PictureCallback:onPictureTaken(byte[] data, <=android.hardware.Camera c) {
+	input(this, data);
+	input(data, data);
+}
+
+#ioWrite
+* <=android.media.ExifInterface:saveAttributes(*) {
+
+}
+
+#ioWrite
+* <=android.media.ExifInterface:*set.*(*) {
+
+}
+
+#camera
+* <=android.graphics.Camera:*.*(*) {
+}
+
+#camCorder
+* <=android.media.CamcorderProfile:*.*(*) {
+}
+
+#camera
+* <=*android\.hardware\.Camera.*:*.*(*) {
+}
+
+#audio
+void <=android.speech.RecognitionListener:onResults(<=android.os.Bundle data) {
+	input(this, data);
+	input(data, data);
+}
+
+#audio
+* <=*android\.media\.Audio.*:*.*(*) {
+}
+
+#audio
+* <=*android\.media\.audio.*:*.*(*) {
+}
+
+#audio
+* <=*android\.media\.JetPlayer.*:*.*(*) {
+}
+
+#audio
+* <=*android\.media\.ToneGenerator.*:*.*(*) {
+}
+
+#audio
+* <=*android\.media\.RemoteControlClient.*:*.*(*) {
+}
+
+#audio
+* <=*android\.media\.Ring.*:*.*(*) {
+}
+
+#audio
+* <=android.media.SoundPool:*.*(*) {
+}
+
+#audio
+* <=android.media.AudioManager:*.*(*) {
+}
+
+#audio
+* <=android.app.MediaRouteButton:*.*(*) {
+}
+
+#video
+* <=*android\.media\.Media.*:*.*(*) {
+}
+
+#video
+* <=android.mtp.MtpObjectInfo:*.*(*) {
+}
+
+#video
+* <=android.graphics.Movie:*.*(*) {
+}
+
+#sms
+<=android.telephony.SmsMessage
+=android.telephony.SmsMessage:createFromPdu(byte[] pdu) {
+	input(pdu, return);
+}
+
+#sms
+* <=android.telephony.SmsMessage:*get.*(*) {
+}
+
+#sms
+* <=android.telephony.SmsManager:*.*(*) {
+}
+
+#mediaRecorder
+void <=android.media.MediaRecorder:setOutputFile(<=java.lang.String path) {
+	label(this, path);
+	output(this, this, this);
+	constrain(path);
+}
+
+#ioWrite
+void <=java.io.OutputStream:write(byte[] data) {
+	output(this, data, data);
+	constrain(this);
+}
+
+#ioWrite
+* <=*java\.io\..*OutputStream:*.*(*) {
+}
+
+#ioWrite
+void <=java.io.OutputStream:write(byte[] data, int off, int len) {
+	output(this, data, data);
+	constrain(this);
+}
+
+#ioWrite
+void <=java.io.OutputStream:write(int b) {
+	output(this, b, b);
+	constrain(this);
+}
+
+#ioWrite
+<=java.io.Writer <=java.io.Writer:append(char c) {
+	output(this, c, c);
+	constrain(this);
+}
+
+#ioWrite
+<=java.io.Writer <=java.io.Writer:append(<=java.lang.CharSequence csq) {
+	output(this, csq, csq);
+	constrain(this);
+}
+
+#ioWrite
+<=java.io.Writer <=java.io.Writer:append(
+	<=java.lang.CharSequence csq, int start, int end) {
+	output(this, csq, csq);
+	constrain(this);
+}
+
+#ioWrite
+void <=java.io.Writer:write(<=java.lang.String x) {
+	output(this, x, x);
+	constrain(this);
+}
+
+#ioWrite
+int <=java.nio.channels.FileChannel:write(<=java.nio.ByteBuffer src) {
+	output(this, src, src);
+	constrain(this);
+}
+
+#ioWrite
+long <=java.nio.channels.FileChannel:write(<=java.nio.ByteBuffer[] bufs) {
+	output(this, bufs, bufs);
+	constrain(this);
+}
+
+#ioWrite
+long <=java.nio.channels.FileChannel:write(
+	<=java.nio.ByteBuffer[] bufs, int offset, int length) {
+	output(this, bufs, bufs);
+	constrain(this);
+}
+
+#ioWrite
+int <=java.nio.channels.FileChannel:write(<=java.nio.ByteBuffer src, long pos) {
+	output(this, src, src);
+	constrain(this);
+}
+
+#ioRead
+long <=java.nio.channels.FileChannel:transferFrom(
+	<=java.nio.channels.ReadableByteChannel src, long pos, long count) {
+	output(this, src, src);
+	constrain(this);
+}
+
+#androiddatabaseRead
+void <=android.database.Cursor:copyStringToBuffer(
+	int columnIndex, <=android.database.CharArrayBuffer buf) {
+	output(this, buf, buf);
+	constrain(this);
+}
+
+#androiddatabaseWrite
+<=android.net.Uri <=android.content.ContentResolver:insert(
+	<=android.net.Uri uri, <=android.content.ContentValues values) {
+	output(uri, values, values);
+	constrain(uri);
+}
+
+#androiddatabaseWrite
+int <=android.content.ContentProvider:bulkInsert(
+	<=android.net.Uri uri, <=android.content.ContentValues[] values) {
+	output(uri, values, values);
+	constrain(uri);
+}
+
+#androiddatabase
+<=android.os.Bundle <=android.content.ContentResolver:call(
+	<=android.net.Uri uri,
+	<=java.lang.String method,
+	<=java.lang.String arg,
+	<=android.os.Bundle extras) {
+	output(uri, extras, extras);
+	constrain(uri);
+}
+
+//#storage
+//int <=android.content.ContentProvider:delete(
+//	<=android.net.Uri uri,
+//	<=java.lang.String selection,
+//	<=java.lang.String[] selectionArgs) {
+//	output(uri, selection, selection);
+//	output(uri, selectionArgs, selectionArgs);
+//	constrain(uri);
+//}
+
+#androiddatabaseWrite
+<=android.net.Uri <=android.content.ContentProvider:insert(
+	<=android.net.Uri uri, <=android.content.ContentValues values) {
+	output(uri, values, values);
+	constrain(uri);
+}
+
+#androiddatabaseWrite
+int <=android.content.ContentProvider:update(
+	<=android.net.Uri uri,
+	<=android.content.ContentValues values,
+	<=java.lang.String selection,
+	<=java.lang.String[] selectionArgs) {
+	output(uri, values, values);
+	output(uri, selection, selection);
+	output(uri, selectionArgs, selectionArgs);
+	constrain(uri);
+}
+
+//#log
+//int =android.util.Log:d(<=java.lang.String tag, <=java.lang.String msg) {
+//	output(this, msg, msg);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:d(<=java.lang.String tag,
+//	<=java.lang.String msg, <=java.lang.Throwable ex) {
+//	output(this, msg, msg);
+//	output(this, ex, ex);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:e(<=java.lang.String tag, <=java.lang.String msg) {
+//	output(this, msg, msg);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:e(<=java.lang.String tag,
+//	<=java.lang.String msg, <=java.lang.Throwable ex) {
+//	output(this, msg, msg);
+//	output(this, ex, ex);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:i(<=java.lang.String tag, <=java.lang.String msg) {
+//	output(this, msg, msg);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:i(<=java.lang.String tag,
+//	<=java.lang.String msg, <=java.lang.Throwable ex) {
+//	output(this, msg, msg);
+//	output(this, ex, ex);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:v(<=java.lang.String tag, <=java.lang.String msg) {
+//	output(this, msg, msg);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:v(<=java.lang.String tag,
+//	<=java.lang.String msg, <=java.lang.Throwable ex) {
+//	output(this, msg, msg);
+//	output(this, ex, ex);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:w(<=java.lang.String tag, <=java.lang.String msg) {
+//	output(this, msg, msg);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:w(<=java.lang.String tag,
+//	<=java.lang.String msg, <=java.lang.Throwable ex) {
+//	output(this, msg, msg);
+//	output(this, ex, ex);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:wtf(<=java.lang.String tag, <=java.lang.String msg) {
+//	output(this, msg, msg);
+//	constrain(msg);
+//}
+//
+//#log
+//int =android.util.Log:wtf(<=java.lang.String tag,
+//	<=java.lang.String msg, <=java.lang.Throwable ex) {
+//	output(this, msg, msg);
+//	output(this, ex, ex);
+//	constrain(msg);
+//}
+
+#sms
+void <=android.telephony.SmsManager:sendDataMessage(
+	<=java.lang.String dst,
+	<=java.lang.String src,
+	short port,
+	byte[] data,
+	<=android.app.PendingIntent sentIntent,
+	<=android.app.PendingIntent deliveryIntent) {
+	output(dst, src, data);
+	constrain(dst);
+}
+
+#sms
+void <=android.telephony.SmsManager:sendMultipartTextMessage(
+	<=java.lang.String dst,
+	<=java.lang.String src,
+	<=java.util.ArrayList parts,
+	<=java.util.ArrayList sentIntents,
+	<=java.util.ArrayList deliveryIntents) {
+	output(dst, src, parts);
+	constrain(dst);
+}
+
+#sms
+void <=android.telephony.SmsManager:sendTextMessage(
+	<=java.lang.String dst,
+	<=java.lang.String src,
+	<=java.lang.String text,
+	<=android.app.PendingIntent sentIntent,
+	<=android.app.PendingIntent deliveryIntent) {
+	output(dst, src, text);
+	constrain(dst);
+}
+
+#networkconnect
+void <=java.net.DatagramSocket:receive(<=java.net.DatagramPacket pkt) {
+	input(this, pkt);
+}
+
+#networkconnect
+void <=java.net.DatagramSocket:send(<=java.net.DatagramPacket pkt) {
+	output(this, pkt, pkt);
+	constrain(pkt);
+}
+
+#ioRead
+int <=java.io.InputStream:read() {
+	input(this, return);
+	constrain(this);
+}
+
+#ioRead
+* <=java.lang.Readable:*.*(*) {
+}
+
+#ioRead
+int <=java.io.InputStream:read(byte[] buf) {
+	input(this, buf);
+	constrain(this);
+}
+
+#ioRead
+int <=java.io.InputStream:read(byte[] buf, int off, int len) {
+	input(this, buf);
+	constrain(this);
+}
+
+#ioRead
+* <=*java.io..*InputStream:*.*(*) {
+}
+
+#ioRead
+int <=java.io.Reader:read() {
+	input(this, return);
+	constrain(this);
+}
+
+#ioRead
+int <=java.io.Reader:read(char[] buf) {
+	input(this, buf);
+	constrain(this);
+}
+
+#ioRead
+int <=java.io.Reader:read(char[] buf, int off, int len) {
+	input(this, buf);
+	constrain(this);
+}
+
+#ioRead
+int <=java.io.Reader:read(<=java.nio.CharBuffer buf) {
+	input(this, buf);
+	constrain(this);
+}
+
+#ioRead
+int <=java.nio.channels.FileChannel:read(<=java.nio.ByteBuffer dst) {
+	input(this, dst);
+	constrain(this);
+}
+
+#ioRead
+long <=java.nio.channels.FileChannel:read(<=java.nio.ByteBuffer[] dst) {
+	input(this, dst);
+	constrain(this);
+}
+
+#ioRead
+long <=java.nio.channels.FileChannel:read(
+	<=java.nio.ByteBuffer[] dst, int offset, int length) {
+	input(this, dst);
+	constrain(this);
+}
+
+#ioRead
+int <=java.nio.channels.FileChannel:read(<=java.nio.ByteBuffer dst, long pos) {
+	input(this, dst);
+	constrain(this);
+}
+
+#networkWrite
+long <=java.nio.channels.FileChannel:transferTo(
+	long pos, long count, <=java.nio.channels.WritableByteChannel ch) {
+	input(this, ch);
+	constrain(this);
+}
+
+#networkRead
+<=java.lang.Object <=java.net.URLConnection:getContent() {
+	input(this, return);
+	constrain(this);
+}
+
+#networkRead
+<=java.lang.Object <=java.net.URLConnection:getContent(<=java.lang.Class[] cs) {
+	input(this, return);
+	constrain(this);
+}
+
+#networkconnect
+<=java.net.URLConnection <=java.net.URL:openConnection() {
+	label(return, this);
+	output(this, this, this);
+	constrain(return);
+}
+
+#networkconnect
+<=java.io.InputStream <=java.net.URL:openStream() {
+	label(return, this);
+	output(this, this, this);
+	constrain(this);
+}
+
+#process
+<=java.lang.Process <=java.lang.ProcessBuilder:start() {
+	input(this, return);
+	output(this, this, this);
+	constrain(return);
+}
+
+#phone
+<=java.lang.String <=android.telephony.TelephonyManager:getDeviceId() {
+	input(this, return);
+	label(return, this);
+}
+
+#phone
+* <=android.telephony.TelephonyManager:*get.*(*) {
+}
+
+#phone
+* <=android.telephony.TelephonyManager:*listen.*(*) {
+}
+
+#phone
+* <=android.telephony.gsm.GsmCellLocation:*.*(*) {
+}
+
+#phone
+* <=android.telephony.PhoneNumberUtils:*.*(*) {
+}
+
+#phone
+* <=*android\.location\..*:*.*(*) {
+}
+
+#runtime
+* <=java.lang.Runtime:*.*(*) {
+}
+
+#fileOpen
+<=java.io.FileInputStream <=android.content.Context:openFileInput(<=java.lang.String path) {
+	label(return, path);
+}
+
+#fileOpen
+<=java.io.FileOutputStream <=android.content.Context:openFileOutput(<=java.lang.String path, int mode) {
+	label(return, path);
+}
+
+#ioWrite
+* <=java.io.FileOutputStream:*.*(*) {
+}
+
+<=java.lang.String <=java.util.Scanner:nextLine() {
+	label(return, this);
+	input(this, return);
+}
+
+#intent
+<=android.content.Intent <=android.app.Activity:getIntent() {
+	label(return, this);
+	input(this, return);
+}
+
+#ioRead
+void <=java.io.FileInputStream:<init>(<=java.lang.String path) {
+	label(this, path);
+}
+
+#ioRead
+void <=java.io.Reader:<init>(<=java.io.InputStream input) {
+	label(this, input);
+}
+
+#ioRead
+void <=java.io.Reader:<init>(<=java.io.Reader reader) {
+	label(this, reader);
+}
+
+#ioRead
+<=java.lang.String <=java.io.Reader:readLine() {
+	input(this, return);
+	label(return, this);
+}
+
+#resource
+<=java.lang.String <=android.content.res.Resources:getString(int id) {
+	label(return, this);
+}
+
+#resource
+<=java.lang.String <=android.content.res.Resources:getString(int id, <=java.lang.Object[] fmt) {
+	label(return, this);
+}
+
+#resource
+<=java.lang.String[] <=android.content.res.Resources:getStringArray(int id) {
+	label(return, this);
+}
+
+#resource
+<=java.lang.CharSequence <=android.content.res.Resources:getText(int id) {
+	label(return, this);
+}
+
+#resource
+<=java.lang.CharSequence <=android.content.res.Resources:getText(int id, <=java.lang.CharSequence def) {
+	label(return, this, def);
+}
+
+#resource
+<=java.lang.CharSequence[] <=android.content.res.Resources:getTextArray(int id) {
+	label(return, this);
+}
+
+#resource
+<=java.io.InputStream <=android.content.res.Resources:openRawResource(int id) {
+	label(return, this);
+}
+
+#resource
+<=java.io.InputStream <=android.content.res.Resources:openRawResource(int id, <=android.util.TypedValue value) {
+	label(return, this);
+}
+
+#resource
+<=android.content.res.AssetFileDescriptor
+<=android.content.res.Resources:openRawResourceFd(int id) {
+	label(return, this);
+}
+
+#resource
+<=android.content.res.AssetManager
+<=android.content.res.Resources:getAssets() {
+	label(return, this);
+}
+
+#resource
+boolean <=android.content.res.Resources:getBoolean(int id) {
+	label(return, this);
+}
+
+#resource
+float <=android.content.res.Resources:getFraction(int id, int base, int pbase) {
+	label(return, this);
+}
+
+#resource
+int <=android.content.res.Resources:getInteger(int id) {
+	label(return, this);
+}
+
+#resource
+int[] <=android.content.res.Resources:getIntArray(int id) {
+	label(return, this);
+}
+
+#intent
+boolean <=android.content.Context:bindService(
+	<=android.content.Intent service,
+	<=android.content.ServiceConnection conn,
+	int flags) {
+	label(conn, service);
+}
+
+#intent
+void <=android.os.Message:setData(<=android.os.Bundle data) {
+	label(this, data);
+}
+
+#intent
+void =android.os.Messenger:send(=android.os.Message msg) {
+	output(this, msg, msg);
+	constrain(msg);
+}
+
+#intent
+void <=android.content.Context:*startActivity.*(<=android.content.Intent intent) {
+	output(this, intent, intent);
+	constrain(intent);
+}
+
+#getSystemService
+* <=android.content.Context:getSystemService(*) {
+}
+
+#deviceProcessRead
+* <=android.content.Context:createPackageContext(*) {
+}
+
+#appSelfInfo
+* <=android.content.Context:*^getApplicationInfo|^getPackageName(*) {
+}
+
+#appSelfInfo
+* <=android.content.Context:*^getAssets|^getPackageCodePath(*) {
+}
+
+#appSelfInfo
+* <=android.content.Context:getClassLoader(*) {
+}
+
+#appStartService
+* <=*android\.content\.Context.*:startService(*) {
+}
+
+#appStopService
+* <=*android\.content\.Context.*:stopService(*) {
+}
+
+#genericFileOp
+* <=android.content.Context:*^getFilesDir|^getDir|^getCacheDir|^getDatabasePath|^getFileStreamPath(*) {
+}
+
+#processing
+* <=*android\.renderscript.*:*.*(*) {
+}
+
+#contacts
+* <=*android\.provider\.Contacts.*:*.*(*) {
+}
+
+#contacts
+* <=*com\.android\.utils\.contact.*:*.*(*) {
+}
+
+#ioRead
+* <=*.*:*get.*InputStream.*(*) {
+}
+
+#ioWrite
+* <=*.*:*get.*OutputStream.*(*) {
+}
+
+#packagemanager
+* <=android.content.Context:getPackageManager(*) {
+}
+
+#activitymanager
+* <=android.app.ActivityManager:*.*(*) {
+}
+
+#activitymanager
+* <=android.app.LocalActivityManager:*.*(*) {
+}
+
+#intent
+* <=android.content.IntentCompat:*.*(*) {
+}
+
+#packagemanager
+* <=android.content.pm.PackageManager:*.*(*) {
+}
+
+#searchmanager
+* <=android.app.SearchManager:*.*(*) {
+}
+
+#searchEngine
+* <=android.provider.SearchRecentSuggestions:*.*(*) {
+}
+
+#packagemanager
+* <=*android\.content\.pm\..*:*.*(*) {
+}
+
+#resource
+* <=android.content.Context:*^getResources|^obtainStyledAttributes|^getText|^getPackageResourcePath(*) {
+}
+
+#resource
+* <=android.content.Context:*^getString|^getTheme|^getContentResolver(*) {
+}
+
+#appPreferenceManagement
+* <=android.content.Context:getSharedPreferences(*) {
+}
+
+#appPreferenceManagement
+* <=android.content.Context:getSharedPreferences(*) {
+}
+
+#appPreferenceManagement
+* <=java.util.prefs.Preferences:*.*(*) {
+}
+
+#appPreferenceManagement
+* <=java.util.prefs.AbstractPreferences:*.*(*) {
+}
+
+#appPermissions
+* <=android.content.Context:*.*Permission.*(*) {
+}
+
+#appPermissions
+* <=android.content.Context:isRestricted(*) {
+}
+
+#appPermissions
+* <=java.lang.SecurityManager:*checkPermission.*(*) {
+}
+
+
+#securitymanager
+* <=java.lang.SecurityManager:*.*(*) {
+}
+
+#uiChange
+* <=*android\.appwidget.*:*.*(*) {
+}
+
+#looper
+* <=*.*:*getMainLooper.*(*) {
+}
+
+#appControlChanged
+* <=android.support.v4.content.LocalBroadcastManager:*unregisterReceiver(*) {
+}
+
+#appControlChanged
+* <=android.content.Context:*^unbindService|^unregisterComponentCallbacks|^unregisterReceiver|^registerComponentCallbacks(*) {
+}
+
+#registerreceiver
+* <=android.content.Context:registerReceiver(*) {
+}
+
+#registerLocalReceiver
+* <=android.support.v4.content.LocalBroadcastManager:*registerReceiver.*(*) {
+}
+
+#alarm
+* <=android.app.AlarmManager:*.*(*) {
+}
+
+#timer
+* <=*java\.util\.Timer.*:*.*(*) {
+}
+
+#timer
+* <=android.os.CountDownTimer:*.*(*) {
+}
+
+#wifi
+boolean <=android.net.wifi.WifiManager:setWifiEnabled(boolean enabled) {
+	output(this, enabled, enabled);
+	constrain(enabled);
+}
+
+#wifi
+* <=android.net.wifi.WifiManager:*.*(*) {
+}
+
+#reflection
+<=java.lang.Object <=java.lang.reflect.Method:invoke(
+	<=java.lang.Object obj,
+	<=java.lang.Object[] args) {
+	output(return, obj, obj);
+	output(return, args, args);
+	constrain(obj);
+	constrain(args);
+}
+
+// #nfc
+// <=android.nfc.NfcAdapter =android.nfc.NfcAdapter:getDefaultAdapter(<=android.content.Context ctxt) {
+// 	label(return, ctxt);
+// 	input(return, ctxt);
+// }
+//
+// #bluetooth
+// <=android.bluetooth.BluetoothAdapter =android.bluetooth.BluetoothAdapter:getDefaultAdapter() {
+// 	label(return, return);
+// 	input(return, return);
+// }
+
+#bluetoothEnable
+boolean <=android.bluetooth.BluetoothAdapter:enable() {
+	output(return, this, this);
+	constrain(this);
+}
+
+#bluetoothDisable
+boolean <=android.bluetooth.BluetoothAdapter:disable() {
+	output(return, this, this);
+	constrain(this);
+}
+
+#bluetoothSocket
+* <=android.bluetooth.BluetoothSocket:*.*(*) {
+}
+
+#bluetoothServer
+* <=android.bluetooth.BluetoothServerSocket:*.*(*) {
+}
+
+#bluetoothServer
+* <=android.bluetooth.BluetoothAdapter:listenUsingRfcommWithServiceRecord(*) {
+}
+
+#bluetoothServer
+* <=android.bluetooth.BluetoothAdapter:closeProfileProxy(*) {
+}
+
+#bluetoothRead
+* <=android.bluetooth.BluetoothAdapter:*get.*(*) {
+}
+
+#bluetoothRead
+* <=android.bluetooth.BluetoothHeadset:*.*(*) {
+}
+
+#bluetoothStatus
+* <=android.bluetooth.BluetoothAdapter:*is.*(*) {
+}
+
+#bluetoothStatus
+* <=android.bluetooth.BluetoothAdapter:checkBluetoothAddress(*) {
+}
+
+#bluetoothEnable
+* <=android.bluetooth.BluetoothAdapter:startDiscovery(*) {
+}
+
+#bluetoothDisable
+* <=android.bluetooth.BluetoothAdapter:cancelDiscovery(*) {
+}
+
+#insecurebluetoothServer
+* <=android.bluetooth.BluetoothAdapter:listenUsingInsecureRfcommWithServiceRecord(*) {
+}
+
+#intent
+void <=android.app.Service:onReceive(
+	<=android.content.Context ctxt,
+	<=android.content.Intent intent) {
+	input(intent, intent);
+}
+
+#intent
+void <=android.os.Handler:handleMessage(<=android.os.Message msg) {
+	input(msg, msg);
+}
+
+#intent
+<=android.os.Bundle <=android.os.Message:getData() {
+	input(return, this);
+}
+
+#intent
+boolean <=android.os.Bundle:getBoolean(<=java.lang.String key) {
+	input(return, key);
+}
+
+#intent
+<=java.lang.String <=android.os.Bundle:getString(<=java.lang.String key) {
+	input(return, key);
+}
+
+#intent
+* <=android.os.Bundle:*.*(*) {
+}
+
+#intent
+* <=android.app.ActivityOptions:*.*(*) {
+}
+
+#intent
+* <=android.content.IntentFilter:*.*(*) {
+}
+
+#intent
+* <=android.app.ActivityCompat:*.*(*) {
+}
+
+#intent
+* <=android.app.PendingIntent:*.*(*) {
+}
+
+#devicepropertyread
+<=java.lang.String =android.os.SystemProperties:native_get(
+	<=java.lang.String key, <=java.lang.String defValue) {
+	input(return, key);
+}
+
+#genericFileOp
+* <=android.os.Environment:*getExternalStorage.*(*) {
+}
+
+#emulatorCheck
+* <=android.os.Environment:*isExternalStorageEmulated.*(*) {
+}
+
+#emulatorCheck
+* <=android.os.Environment:*isExternalStorageRemovable.*(*) {
+}
+
+#genericFileOp
+* <=android.content.Context:*get.*Dir.*(*) {
+}
+
+#genericFileOp
+* <=android.os.Environment:*get.*Dir.*(*) {
+}
+
+#mediaRecorder
+* <=android.provider.MediaStore:*.*(*) {
+}
+
+#browserInteraction
+* <=android.provider.Browser:*.*(*) {
+}
+
+#textToSpeech
+* <=*android\.speech\.tts.*:*.*(*) {
+}
+
+#date
+* <=*android\.util\.MonthDisplayHelper.*:*.*(*) {
+}
+
+#date
+long <=java.lang.System:currentTimeMillis() {
+	input(return, return);
+}
+
+#date
+void <=java.util.Date:<init>() {
+	input(this, this);
+}
+
+#date
+void <=java.util.Date:<init>(int year, int month, int day) {
+	input(this, this);
+}
+
+#date
+void <=java.util.Date:<init>(
+    int year,
+    int month,
+    int day,
+    int hour,
+    int minute) {
+	input(this, this);
+}
+
+#date
+void <=java.util.Date:<init>(
+    int year,
+    int month,
+    int day,
+    int hour,
+    int minute,
+    int second) {
+	input(this, this);
+}
+
+#date
+void <=java.util.Date:<init>(long millisecond) {
+	input(this, this);
+}
+
+#date
+void <=java.util.Date:<init>(<=java.lang.String string) {
+	input(this, this);
+}
+
+#date
+void <=java.util.Calendar:<init>() {
+	input(this, this);
+}
+
+#date
+void <=java.util.Calendar:<init>(
+	<=java.util.TimeZone timezone, <=java.util.Locale locale) {
+	input(this, this);
+}
+
+#date
+<=java.util.Date <=java.util.Calendar:getTime() {
+    input(this, this);
+}
+
+#date
+<=java.util.Calendar <=java.util.Calendar:getInstance() {
+    input(return, return);
+}
+
+#date
+<=java.util.Calendar <=java.util.Calendar:getInstance(<=java.util.Locale locale) {
+    input(return, return);
+}
+
+#date
+<=java.util.Calendar <=java.util.Calendar:getInstance(<=java.util.TimeZone timezone) {
+    input(return, return);
+}
+
+#date
+<=java.util.Calendar <=java.util.Calendar:getInstance(<=java.util.TimeZone timezone, <=java.util.Locale locale) {
+    input(return, return);
+}
+
+#date
+void <=java.util.GregorianCalendar:<init>() {
+	input(this, this);
+}
+
+#date
+void <=java.util.GregorianCalendar:<init>(int year, int month, int day) {
+	input(this, this);
+}
+
+#date
+void <=java.util.GregorianCalendar:<init>(
+    int year,
+    int month,
+    int day,
+    int hour,
+    int minute) {
+	input(this, this);
+}
+
+#date
+void <=java.util.GregorianCalendar:<init>(
+    int year,
+    int month,
+    int day,
+    int hour,
+    int minute,
+    int second) {
+	input(this, this);
+}
+
+#date
+void <=java.util.GregorianCalendar:<init>(
+	<=java.util.Locale locale) {
+	input(this, this);
+}
+
+#date
+void <=java.util.GregorianCalendar:<init>(
+	<=java.util.TimeZone timezone) {
+	input(this, this);
+}
+
+#date
+void <=java.util.GregorianCalendar:<init>(
+	<=java.util.TimeZone timezone, <=java.util.Locale locale) {
+	input(this, this);
+}
+
+#date
+void <=android.text.format.Time:<init>() {
+    input(this, this);
+}
+
+#date
+void <=android.text.format.Time:<init>(<=java.lang.String timezone) {
+    input(this, this);
+}
+
+#date
+void <=android.text.format.Time:<init>(<=android.text.format.Time other) {
+    input(this, this);
+}
+
+// #date
+// void <=java.text.SimpleDateFormat:<init>() {
+//     input(this, this);
+// }
+//
+// #date
+// void <=java.text.SimpleDateFormat:<init>(<=java.lang.String pattern) {
+//     input(this, this);
+// }
+//
+// #date
+// void <=java.text.SimpleDateFormat:<init>(<=java.lang.String template, <=java.text.DateFormatSymbols value) {
+//     input(this, this);
+// }
+//
+// #date
+// void <=java.text.SimpleDateFormat:<init>(<=java.lang.String template, <=java.util.Locale locale) {
+//     input(this, this);
+// }
+
+#date
+<=java.util.Date <=java.text.SimpleDateFormat:parse(<=java.lang.String string) {
+    input(return, return);
+}
+
+#date
+<=java.util.Date <=java.text.SimpleDateFormat:parse(<=java.lang.String string, <=java.text.ParsePosition position) {
+    input(return, return);
+}
+
+
+#random
+void <=java.util.Random:<init>() {
+	input(this, this);
+}
+
+#random
+void <=java.util.Random:<init>(long seed) {
+	input(this, this);
+}
+
+#random
+int <=java.util.Random:nextInt() {
+    input(return, return);
+}
+
+#random
+int <=java.util.Random:nextInt(*) {
+
+}
+
+#random
+double <=java.util.Random:nextDouble() {
+    input(return, return);
+}
+
+#random
+void <=java.security.SecureRandom:<init>() {
+	input(this, this);
+}
+
+#random
+void <=java.security.SecureRandom:<init>(byte[] seed) {
+	input(this, this);
+}
+
+#random
+double <=java.lang.Math:random() {
+	input(this, this);
+}
+
+#random
+* <=java.util.Random:*.*(*) {
+}
+
+#random
+* <=java.util.UUID:*.*(*) {
+}
+
+#permissions
+* <=java.io.File:*set.*(*) {
+}
+
+#ioRead
+* <=java.io.File:*get.*(*) {
+}
+
+#genericFileOp
+* <=java.io.File:*.*(*) {
+}
+
+#uiObjectPrepare
+* <=android.graphics.Paint:*.*(*) {
+}
+
+#uiObjectPrepare
+* <=android.graphics.ColorMatrix:*.*(*) {
+}
+
+#uiObjectPrepare
+* <=android.graphics.LinearGradient:*.*(*) {
+}
+
+#uiObjectPrepare
+* <=android.graphics.RadialGradient:*.*(*) {
+}
+
+#uiObjectPrepare
+* <=android.graphics.SurfaceTexture:*.*(*) {
+}
+
+#uiObjectPrepare
+* <=android.graphics.PathMeasure:*.*(*) {
+}
+
+#uiObjectPrepare
+* <=android.graphics.NinePatch:*.*(*) {
+}
+
+#uiObjectDraw
+* <=android.graphics.Canvas:*.*(*) {
+}
+
+#uiObjectRead
+* <=android.graphics.RegionIterator:*.*(*) {
+}
+
+#uiChange
+* <=android.graphics.drawable.Drawable:*.*(*) {
+}
+
+#uiChange
+* <=android.graphics.drawable.Animatable:*.*(*) {
+}
+
+#uiChange
+* <=*com\.actionbarsherlock\.ActionBarSherlock.*:*.*(*) {
+}
+
+#uiChange
+* <=android.view.View:*inflate$|invalidate$(*) {
+}
+
+#uiChange
+* <=android.view.View:<init>(*) {
+}
+
+#uiChange
+* <=android.content.Context:setTheme(*) {
+}
+
+#uiChange
+* <=android.view.View:*clear.*(*) {
+}
+
+#uiChange
+* <=android.view.View:*^request|^remove|^refresh(*) {
+}
+
+#uiChange
+* <=android.opengl.GLES20:*.*(*) {
+}
+
+#uiChange
+* <=android.app.ActionBar:*set.*(*) {
+}
+
+#uiChange
+* <=android.util.DisplayMetrics:*set.*(*) {
+}
+
+#uiObjectRead
+* <=android.app.ActionBar:*get.*(*) {
+}
+
+#uiObjectRead
+* <=android.graphics.Typeface:*.*(*) {
+}
+
+#uiObjectRead
+* <=*android\.graphics\..*Shader:*get.*(*) {
+}
+
+#uiObjectWrite
+* <=*android\.graphics\..*Shader:*set.*(*) {
+}
+
+#uiObjectRead
+* <=android.graphics.ImageFormat:*.*(*) {
+}
+
+#uiObjectRead
+* <=android.view.View:*get.*(*) {
+}
+
+#uiObjectRead
+* <=android.view.View:*find.*(*) {
+}
+
+#uiObjectPropertyRead
+* <=android.view.View:*is.*(*) {
+}
+
+#uiObjectPropertyRead
+* <=android.view.View:*has.*(*) {
+}
+
+#uiRegisterCallBack
+* <=android.view.View:*^setOn|^on(*) {
+}
+
+#uiChange
+* <=android.view.View:*set.*(*) {
+}
+
+#globalUiChange
+* <=android.app.WallpaperManager:*.*(*) {
+}
+
+#globalUiChange
+* <=android.content.Context:setWallpaper(*) {
+}
+
+#globalUiChange
+* <=android.app.UiModeManager:*.*(*) {
+}
+
+#globalUiChange
+* <=android.content.Context:*getWallpaper.*(*) {
+}
+
+#globalUiChange
+* <=*android\.service\.wallpaper.*:*.*(*) {
+}
+
+#uiEventTrigger
+* <=android.view.View:*^post|^scroll|^send|^dispatch|^jump(*) {
+}
+
+#uiEventAccess
+* <=android.view.MotionEvent:*.*(*) {
+}
+
+#uiEventAccess
+* <=*android\.gesture.*:*.*(*) {
+}
+
+
+#inputTextRead
+* <=android.view.inputmethod.CompletionInfo:*.*(*) {
+}
+
+#appControlChanged
+* <=android.preference.Preference:*setOn.*(*) {
+}
+
+#appPreferenceManagement
+* <=*^android\.preference\..*:*.*(*) {
+}
+
+#androidCursorDataRead
+* <=android.database.Cursor:*get.*(*) {
+}
+
+#androidCursorDataRead
+* <=android.widget.CursorAdapter:*get.*(*) {
+}
+
+#androidCursorStatusRead
+* <=android.database.Cursor:*is.*(*) {
+}
+
+#androidCursorSeek
+* <=android.database.Cursor:*move.*(*) {
+}
+
+#regexMatcher
+* <=java.util.regex.Matcher:*.*(*) {
+}
+
+#regexPattern
+* <=java.util.regex.Pattern:*.*(*) {
+}
+
+#regexMatcher
+* <=java.util.regex.MatchResult:*.*(*) {
+}
+
+#androidSparseArrayRead
+* <=android.util.SparseIntArray:*get.*(*) {
+}
+
+#androidSparseArrayAdd
+* <=android.util.SparseIntArray:*put.*(*) {
+}
+
+#socketOpen
+* <=java.net.Socket:close(*) {
+}
+
+#socketOpen
+* <=java.nio.channels.SocketChannel:open(*) {
+}
+
+#networkRead
+* <=java.nio.channels.SocketChannel:*read.*(*) {
+}
+
+#networkconnect
+* <=java.nio.channels.SocketChannel:*.*Connect(*) {
+}
+
+#socketAccess
+* <=java.nio.channels.SocketChannel:socket(*) {
+}
+
+#networkWrite
+* <=java.nio.channels.SocketChannel:*write.*(*) {
+}
+
+#networkWrite
+* <=*org\.apache\.cordova\.FileTransfer.*:*.*(*) {
+}
+
+#asyncTaskPublishProgress
+* <=android.os.AsyncTask:*.*Progress.*(*) {
+}
+
+#asyncTaskCreate
+* <=android.os.AsyncTask:<init>(*) {
+}
+
+#asyncTaskCreate
+* <=android.app.TaskStackBuilder:*.*(*) {
+}
+
+#asyncTaskExecute
+* <=android.os.AsyncTask:*execute.*(*) {
+}
+
+#asyncTaskExecute
+* <=android.os.AsyncTaskCompat:*execute.*(*) {
+}
+
+#asyncTaskExecute
+* <=android.os.AsyncTask:*.*Execute.*(*) {
+}
+
+#asyncTaskExecute
+* <=android.os.AsyncTask:*do.*(*) {
+}
+
+#asyncTaskExecute
+* <=*android\.content\.AsyncTaskLoader.*:*.*(*) {
+}
+
+#asyncTaskCancel
+* <=android.os.AsyncTask:cancel(*) {
+}
+
+#asyncTaskCancel
+* <=android.os.AsyncTask:*.*Cancel.*(*) {
+}
+
+#asyncTaskRead
+* <=android.os.AsyncTask:*get.*(*) {
+}
+
+
+#asyncTaskStatus
+* <=android.os.AsyncTask:*is.*(*) {
+}
+
+#asyncCommunication
+* <=java.util.EventObject:*.*(*) {
+}
+
+#asyncCommunication
+* <=android.os.CancellationSignal:*.*(*) {
+}
+
+#fileObserver
+* <=android.os.FileObserver:*.*(*) {
+}
+
+#networkconnect
+* <=java.net.Socket:connect(*) {
+}
+
+#networkBind
+* <=java.net.Socket:bind(*) {
+}
+
+#networkInterfaceQuery
+* <=java.net.NetworkInterface:*get.*(*) {
+}
+
+#networkAddressQuery
+* <=java.net.InetAddress:*is.*(*) {
+}
+
+#genericChannelWrite
+* <=java.nio.channels.WritableByteChannel:*write.*(*) {
+}
+
+#genericChannelWrite
+* <=java.nio.channels.ReadableByteChannel:*read.*(*) {
+}
+
+#ioReadClose
+* <=java.io.BufferedReader:close(*) {
+}
+
+#ioWriteClose
+* <=java.io.BufferedWriter:close(*) {
+}
+
+#ioWriteClose
+* <=java.io.OutputStream:close(*) {
+}
+
+#ioReadClose
+* <=java.io.InputStream:close(*) {
+}
+
+#ioWriteClose
+* <=java.io.OutputStreamWriter:close(*) {
+}
+
+#ioClose
+* <=java.io.Closeable:close(*) {
+}
+
+#ioReadClose
+* <=java.io.InputStreamReader:close(*) {
+}
+
+#ioRead
+* <=android.graphics.BitmapFactory:*.*decode.*(*) {
+}
+
+#ioRead
+* <=*android\.graphics\.BitmapFactory.*:*.*Decode.*(*) {
+}
+
+#ioRead
+* <=android.graphics.BitmapRegionDecoder:*.*(*) {
+}
+#sensor
+* <=android.hardware.SensorManager:*.*(*) {
+}
+
+#sensor
+* <=android.hardware.Sensor:*.*(*) {
+}
+
+#facebook
+* <=*com\.facebook\..*:*.*(*) {
+}
+
+#socialSharing
+* <=android.app.ShareCompat:*.*(*) {
+}
+
+#magneticsensor
+* <=android.hardware.GeomagneticField:*.*(*) {
+}
+
+#usb
+* <=*android\.hardware\.usb\..*:*.*(*) {
+}
+
+#date
+* <=java.util.Date:*.*(*) {
+}
+
+#date
+* <=java.util.Calendar:*.*(*) {
+}
+
+#date
+* <=java.util.SimpleTimeZone:*.*(*) {
+}
+
+#date
+* <=java.util.TimeZone:*.*(*) {
+}
+
+#date
+* <=android.util.TimeUtils:*.*(*) {
+}
+
+#ioWrite
+* <=java.io.DataOutputStream:*^write|^flush|^to(*) {
+}
+
+#ioWrite
+* <=java.io.ByteArrayOutputStream:*^write|^flush|^to(*) {
+}
+
+#ioWrite
+* <=java.io.ObjectOutputStream:*^write|^flush|^to(*) {
+}
+
+#ioWrite
+* <=java.io.BufferedWriter:*^write|^flush|^to|^newLine(*) {
+}
+
+#ioWrite
+* <=java.io.ObjectOutput:*.*(*) {
+}
+
+#ioWrite
+* <=java.io.DataOutput:*.*(*) {
+}
+
+#ioRead
+* <=java.io.DataInputStream:*read.*(*) {
+}
+
+#ioRead
+* <=java.io.DataInput:*.*(*) {
+}
+
+#ioRead
+* <=java.io.ObjectInputStream:*read.*(*) {
+}
+
+#ioRead
+* <=java.io.ObjectInput:*.*(*) {
+}
+
+#ioRead
+* <=net.sf.plist.io.bin.Seekable:*.*(*) {
+}
+
+#ioRead
+* <=java.io.ByteArrayInputStream:*read.*(*) {
+}
+
+#genericFileOp
+* <=java.io.RandomAccessFile:*.*(*) {
+}
+
+#ioWrite
+* <=java.io.PrintStream:*^print|^flush|^append(*) {
+}
+
+#userAccountAccess
+* <=android.accounts.Account:*.*(*) {
+}
+
+#userAccountAccess
+* <=android.accounts.AccountManager:*.*(*) {
+}
+
+#userAccountAuthenticator
+* <=android.accounts.AccountAuthenticatorActivity:*.*(*) {
+}
+
+#userAccountAuthenticator
+* <=android.accounts.AuthenticatorDescription:*.*(*) {
+}
+
+#uiChange
+* <=android.app.Activity:*^close|^finish|^isFinishing(*) {
+}
+
+#uiObjectRead
+* <=android.app.Activity:*find.*(*) {
+}
+
+#uiObjectRead
+* <=android.app.Activity:getActionBar(*) {
+}
+
+#uiRegisterCallBack
+* <=android.app.Activity:*set.*Callback(*) {
+}
+
+#uiRegisterCallBack
+* <=android.app.Activity:*on.*(*) {
+}
+
+#uiUnRegisterCallBack
+* <=android.graphics.BitmapFactory$Options:requestCancelDecode(*) {
+}
+
+#uiRegisterCallBack
+* <=android.app.Activity:*set.*Controller(*) {
+}
+
+#uiChange
+* <=android.app.Activity:*^set|^show(*) {
+}
+
+#uiChange
+* <=android.app.Activity:*getLoaderManager|getWindow|<init>(*) {
+}
+
+#uiChange
+* <=android.app.LoaderManager:*.*(*) {
+}
+
+#uiChange
+* <=android.content.Loader:*.*(*) {
+}
+
+#uiChange
+* <=android.app.Dialog:*.*(*) {
+}
+
+#uiChange
+* <=*android\.content\.DialogInterface.*:*.*(*) {
+}
+
+#uiChange
+* <=android.app.DialogFragment:*.*(*) {
+}
+
+#uiChange
+* <=android.app.Fragment:*.*(*) {
+}
+
+#intent
+* <=*android\.app\.FragmentActivity.*:*.*(*) {
+}
+
+#uiChange
+* <=android.app.FragmentManager:*.*(*) {
+}
+
+#uiChange
+* <=android.app.FragmentTransaction:*.*(*) {
+}
+
+#uiChange
+* <=*android\.app\.ListFragment.*:*.*(*) {
+}
+
+#uiChange
+* <=android.app.Notification:*.*(*) {
+}
+
+#uiChange
+* <=android.app.NotificationManager:*.*(*) {
+}
+
+#uiChange
+* <=*android\.app\.NotificationCompat.*:*.*(*) {
+}
+
+#uiChange
+* <=android.app.AlertDialog:*.*(*) {
+}
+
+#deviceProcessRead
+* <=android.app.ActivityManager:getRunningTasks(*) {
+}
+
+#appControlChanged
+* <=android.app.Application:unregisterComponentCallbacks(*) {
+}
+
+#appControlChanged
+* <=android.app.Application:*onCreate|onTerminate(*) {
+}
+
+#appControlChanged
+* <=android.app.Application:*.*registerActivityLifecycleCallbacks(*) {
+}
+
+#deviceBackup
+* <=*android\.app\.backup.*:*.*(*) {
+}
+
+#devicesettings
+* <=android.provider.Settings:*.*(*) {
+}
+
+#devicesettings
+* <=android.hardware.input.InputManager:*.*(*) {
+}
+
+#keyguard
+* <=android.app.KeyguardManager:*.*(*) {
+}
+
+#date
+* <=java.text.DateFormat:*.*(*) {
+}
+
+#reflection
+* <=java.lang.Class:*.*(*) {
+}
+
+#reflection
+* <=java.lang.StackTraceElement:*.*(*) {
+}
+
+#reflection
+* <=java.lang.ClassLoader:*.*(*) {
+}
+
+#reflection
+* <=*^java\.lang\.reflect\..*:*.*(*) {
+}
+
+#power
+* <=android.os.PowerManager:*.*(*) {
+}
+
+#changeDeviceTime
+* <=android.os.SystemClock:*set.*(*) {
+}
+
+#date
+* <=android.os.SystemClock:*.*(*) {
+}
+
+#diskStatusRead
+* <=android.os.StatFs:*.*(*) {
+}
+
+#date
+* <=android.text.format.Time:*.*(*) {
+}
+
+#vpn
+* <=android.net.VpnService:*.*(*) {
+}
+
+#atomic
+* <=*^java\.util\.concurrent\.atomic\..*:*.*(*) {
+}
+
+#log
+* <=*java\.util\.logging\..*:*.*(*) {
+}
+
+#crypto
+* <=*^javax\.crypto\..*:*.*(*) {
+}
+
+#crypto
+* <=*javax\.net\.ssl\..*:*.*(*) {
+}
+
+#cryptocert
+* <=*^java\.security\.cert\..*:*.*(*) {
+}
+
+#cryptocert
+* <=*^javax\.security\.cert\..*:*.*(*) {
+}
+
+#cryptodigest
+* <=java.security.MessageDigest:*.*(*) {
+}
+
+#cryptosignature
+* <=java.security.Signature:*.*(*) {
+}
+
+#cryptoalgo
+* <=java.security.Provider:*.*(*) {
+}
+
+#crypto
+* <=java.security.Identity:*.*(*) {
+}
+
+#cryptoalgo
+* <=java.security.Security:*.*(*) {
+}
+
+#cryptoalgo
+* <=*^java\.security\.Algorithm.*:*.*(*) {
+}
+
+#cryptoalgo
+* <=*^java\.security\.spec\..*:*.*(*) {
+}
+
+#cryptoalgo
+* <=*java\.security\.interfaces\.DSAParams.*:*.*(*) {
+}
+
+#cryptokey
+* <=*^java\.security\.Key.*:*.*(*) {
+}
+
+#permissions
+* <=java.security.Permission:*.*(*) {
+}
+
+#permissions
+* <=java.security.PermissionCollection:*.*(*) {
+}
+
+#resource
+* <=android.content.res.Resources:*openRawResource.*(*) {
+}
+
+#resource
+* <=android.content.res.AssetManager:*.*(*) {
+}
+
+#resource
+* <=android.content.Context:fileList(*) {
+}
+
+#genericIO
+* <=android.content.res.AssetFileDescriptor:*.*(*) {
+}
+
+#resource
+* <=android.content.res.Resources:*.*(*) {
+}
+
+#objectinit
+* <=java.lang.Object:<init>() {
+}
+
+#reflection
+* <=java.lang.Object:getClass() {
+}
+
+#parcel
+* <=*android\.os\.Parcel.*:*.*(*) {
+}
+
+#datastructure
+* <=java.util.Vector:*.*(*) {
+}
+
+#datastructure
+* <=java.util.ArrayList:*.*(*) {
+}
+
+#datastructure
+* <=java.util.Arrays:*.*(*) {
+}
+
+#datastructure
+* <=java.util.Collections:*.*(*) {
+}
+
+#datastructure
+* <=java.util.HashMap:*.*(*) {
+}
+
+#string
+* <=java.util.StringTokenizer:*.*(*) {
+}
+
+#datastructure
+* <=java.util.HashTable:*.*(*) {
+}
+
+#datastructure
+* <=java.lang.Enum:*.*(*) {
+}
+
+#datastructure
+* <=*java.util.Hash.*:*.*(*) {
+}
+
+#datastructure
+* <=*java.util..*Hash.*:*.*(*) {
+}
+
+#datastructure
+* <=java.util.TreeSet:*.*(*) {
+}
+
+#datastructure
+* <=java.lang.System:*arraycopy.*(*) {
+}
+
+#datastructure
+* <=*java.util.Abstract.*:*.*(*) {
+}
+
+#datastructure
+* <=java.util.Stack:*.*(*) {
+}
+
+#datastructure
+* <=*java.util..*Array:*.*(*) {
+}
+
+#datastructure
+* <=*android.util..*Array:*.*(*) {
+}
+
+#datastructure
+* <=java.util.LinkedHashMap:*.*(*) {
+}
+
+#datastructure
+* <=java.lang.ThreadLocal:*.*(*) {
+}
+
+#datastructure
+* <=java.lang.Pair:*.*(*) {
+}
+
+#datastructure
+* <=android.support.v4.util.SimpleArrayMap:*.*(*) {
+}
+
+#storage
+* <=java.io.File:*.*(*) {
+}
+
+#androidtext
+* <=*android.text.*:*.*(*) {
+}
+
+#androidwidget
+* <=*android\.widget.*:*.*(*) {
+}
+
+#androidview
+* <=*android\.view.*:*.*(*) {
+}
+
+#androidview
+* <=*android.internal.view.*:*.*(*) {
+}
+
+#androidanimation
+* <=*android.animation.*:*.*(*) {
+}
+
+#intent
+* <=*android.app.Intent:*.*(*) {
+}
+
+#instrumentation
+* <=*android\.app\.Instrumentation.*:*.*(*) {
+}
+
+#deviceNetworkSettings
+* <=android.net.ConnectivityManager:*.*(*) {
+}
+
+#modifyDeviceNetworkInfo
+* <=android.net.ConnectivityManager.NetworkCallback:*.*(*) {
+}
+
+#permissions
+* <=android.net.Credentials:*.*(*) {
+}
+
+#dhcpResponse
+* <=android.net.DhcpInfo:*.*(*) {
+}
+
+#ipaddress
+* <=android.net.IpPrefix:*.*(*) {
+}
+
+#ipaddress
+* <=android.net.LinkAddress:*.*(*) {
+}
+
+#serversocket
+* <=android.net.LocalSocket:*.*(*) {
+}
+
+#socketaddress
+* <=android.net.LocalSocketAddress:*.*(*) {
+}
+
+#mail
+* <=android.net.MailTo:*.*(*) {
+}
+
+#socketAccess
+* <=android.net.Network:*.*(*) {
+}
+
+#networkpermission
+* <=android.net.NetworkCapabilities:*.*(*) {
+}
+
+#accessDeviceNetworkInfo
+* <=android.net.NetworkInfo:*.*(*) {
+}
+
+#networkRead
+* <=android.net.NetworkRequest:*.*(*) {
+}
+
+#networkRead
+* <=*android\.app\.DownloadManager.*:*.*(*) {
+}
+
+#networkRead
+* <=android.net.NetworkRequest.Builder:*.*(*) {
+}
+
+#ssl
+* <=*android\.net\.SSL.*:*.*(*) {
+}
+
+#network
+* <=*android\.net\..*:*.*(*) {
+}
+
+#thread
+* <=java.lang.Thread:*.*(*) {
+}
+
+#thread
+* <=java.lang.Runnable:*.*(*) {
+}
+
+#concurrent
+* <=*java\.util\.concurrent.*:*.*(*) {
+}
+
+#concurrent
+* <=java.util.Observable:*.*(*) {
+}
+
+#concurrent
+* <=java.lang.Object:wait(*) {
+}
+
+#concurrent
+* <=java.lang.Object:notifyAll(*) {
+}
+
+#concurrent
+* <=java.lang.Object:notify(*) {
+}
+
+#concurrent
+* <=android.os.ConditionVariable:*.*(*) {
+}
+
+#log
+* <=android.util.Log:*.*(*) {
+}
+
+#storage
+* <=android.os.DropBoxManager:*.*(*) {
+}
+
+#debugging
+* <=android.os.Debug:*.*(*) {
+}
+
+#debugging
+* <=android.util.DebugUtils:*.*(*) {
+}
+
+#json
+* <=*org.json.*:*.*(*) {
+}
+
+#json
+* <=*android\.util\.Json.*:*.*(*) {
+}
+
+#xml
+* <=*org.xml.*:*.*(*) {
+}
+
+#xml
+* <=*javax.xml.*:*.*(*) {
+}
+
+#xml
+* <=android.util.Xml:*.*(*) {
+}
+
+#nfc
+* <=*android.nfc.*:*.*(*) {
+}
+
+#androiddatabase
+* <=*android\.database\..*:*.*(*) {
+}
+
+#androiddatabase
+* <=*android\.content\.ContentProvider.*:*.*(*) {
+}
+
+#androiddatabase
+* <=android.app.Application:openOrCreateDatabase(*) {
+}
+
+#devicepropertyread
+* <=android.app.Application:onLowMemory(*) {
+}
+
+#androiddatabase
+* <=android.content.Context:*.*atabase.*(*) {
+}
+
+#contentprovider
+* <=*android.content.ContentValues:*.*(*) {
+}
+
+#contentprovider
+* <=*android.content.Entity:*.*(*) {
+}
+
+#intent
+* <=android.content.Intent:*.*(*) {
+}
+
+#intent
+* <=*android\.app\..*Intent:*.*(*) {
+}
+
+#reference
+* <=*java.lang.ref.*:*.*(*) {
+}
+
+#androidtext
+* <=java.text.ParsePosition:*.*(*) {
+}
+
+#androidhandler
+* <=android.os.Handler:*.*(*) {
+}
+
+#androidhandler
+* <=android.os.Message:*.*(*) {
+}
+
+#httpWrite
+* <=*org\.apache\.http\.HttpReq.*:*.*(*) {
+}
+
+#httpRead
+* <=*org\.apache\.http\.HttpRes.*:*.*(*) {
+}
+
+#serversocket
+* <=org.apache.http.HttpServerConnection:*.*(*) {
+}
+
+#http
+* <=*org.apache.http.*:*.*(*) {
+}
+
+#garbagecollector
+* <=java.lang.System:gc(*) {
+}
+
+#string
+* <=java.util.StringTokenizer:*.*(*) {
+}
+
+#string
+* <=java.lang.Appendable:*.*(*) {
+}
+
+#binder
+* <=android.os.Binder:*.*(*) {
+}
+
+#vibrator
+* <=android.os.Vibrator:*.*(*) {
+}
+
+#binder
+* <=android.os.IBinder:*.*(*) {
+}
+
+#androidServerInteraction
+* <=android.os.RemoteCallbackList:*.*(*) {
+}
+
+#binder
+* <=*android\.app\.BackStack.*:*.*(*) {
+}
+
+#devicepropertyread
+* <=java.lang.System:*.*(*) {
+}
+
+#devicepropertyread
+* <=java.util.Locale:*.*(*) {
+}
+
+#devicepropertyread
+* <=android.util.Property:*.*(*) {
+}
+
+#crypto
+* <=*javax\.security\.auth\..*:*.*(*) {
+}
+
+#resource
+* <=*android\.content\.res\..*:*.*(*) {
+}
+
+#resource
+* <=java.util.ResourceBundle:*.*(*) {
+}
+
+#looper
+* <=android.os.Looper:*.*(*) {
+}
+
+#looper
+* <=android.os.MessageQueue:*.*(*) {
+}
+
+#looper
+* <=*android\.app\.FragmentManagerImpl.*:*.*(*) {
+}
+
+#appcontext
+* <=*android\.content\..*:*.*Context(*) {
+}
+
+#ioWrite
+* <=*java\.io\..*Writer.*:*.*(*) {
+}
+
+#ioWrite
+* <=java.io.Flushable:*.*(*) {
+}
+
+#ioRead
+* <=*java\.io\..*Reader.*:*.*(*) {
+}
+
+
+#genericIO
+* <=*java\.nio\.channels\..*Channel:*.*(*) {
+}
+
+#textmanipulation
+* <=*java\.text\..*:*.*(*) {
+}
+
+#encoding
+* <=android.util.Base64:*.*(*) {
+}
+
+#encoding
+* <=*java\.nio\.charset\..*:*.*(*) {
+}
+
+#strictmodeviolation
+* <=android.os.StrictMode:*.*(*) {
+}
+
+#sendbroadcast
+* <=android.content.Context:*send.*Broadcast(*) {
+}
+
+#intent
+* <=android.content.Context:startIntentSender(*) {
+}
+
+#removebroadcast
+* <=android.content.Context:removeStickyBroadcast(*) {
+}
+
+#storage
+* <=android.content.Context:deleteFile(*) {
+}
+
+#sendLocalBroadcast
+* <=android.support.v4.content.LocalBroadcastManager:*sendBroadcast.*(*) {
+}
+
+#broadcast
+* <=android.content.BroadcastReceiver:*.*(*) {
+}
+
+#broadcast
+* <=android.content.LocalBroadcastManager:*.*(*) {
+}
+
+#webkit
+* <=*android\.webkit\..*:*.*(*) {
+}
+
+#maps
+* <=*com\.google\.android\.maps.*:*.*(*) {
+}
+
+#privelegedoperation
+* <=java.security.AccessController:doPrivileged(*) {
+}
+
+#accessControl
+* <=java.security.Principal:*.*(*) {
+}
+
+#accessControl
+* <=java.security.AccessController:*.*(*) {
+}
+
+#database
+* <=*java\.sql\..*:*.*(*) {
+}
+
+#androidcontent
+* <=*android\.content\.ContentUris.*:*.*(*) {
+}
+
+#graphics
+* <=*android\.opengl\..*:*.*(*) {
+}
+
+#graphics
+* <=*com\.unity3d\..*:*.*(*) {
+}
+
+#graphics
+* <=*javax\.microedition\.khronos.*:*.*(*) {
+}
+
+#genericIO
+* <=*java\.nio\.channels.*:*.*(*) {
+}
+
+#genericIO
+* <=java.io.ObjectStreamClass:*.*(*) {
+}
+
+#genericIO
+* <=java.io.ObjectStreamField:*.*() {
+}
+
+#reflection
+* <=*dalvik.*:*.*(*) {
+}
+
+#datastructure
+* <=*java\.beans.*:*.*(*) {
+}
+
+#permissions
+* <=android.content.ContentResolver:*ermissi.*(*) {
+}
+
+#contentresolverCreate
+* <=android.content.ContentResolver:*acquire.*(*) {
+}
+
+#contentresolverWrite
+* <=android.content.ContentResolver:*add.*(*) {
+}
+
+#contentresolverWrite
+* <=android.content.ContentResolver:*apply.*(*) {
+}
+
+#contentresolverWrite
+* <=android.content.ContentResolver:*set.*(*) {
+}
+
+#contentresolverWrite
+* <=android.content.ContentResolver:*update.*(*) {
+}
+
+#contentresolverRead
+* <=android.content.ContentResolver:*get.*(*) {
+}
+
+#contentresolverOpen
+* <=android.content.ContentResolver:*open.*(*) {
+}
+
+#contentresolverQuery
+* <=android.content.ContentResolver:*query.*(*) {
+}
+
+#contentresolver
+* <=android.content.ContentResolver:*.*(*) {
+}
+
+#xml
+* <=*android\.sax.*:*.*(*) {
+}
+
+#facedetector
+* <=*android\.media\.FaceDetector.*:*.*(*) {
+}
+
+
+#uiObjectRead
+* <=android.media.ThumbnailUtils:*.*(*) {
+}
+
+#process
+* <=*java.lang.Process.*:*.*(*) {
+}
+
+#process
+* <=android.os.Process:*.*(*) {
+}
+
+#telephony
+* <=*android\.telephony.*:*.*(*) {
+}
+
+#appservice
+* <=android.app.Service:*.*(*) {
+}
+
+#uiChange
+* <=android.app.ActionBar:*.*(*) {
+}
+
+#uiChange
+* <=android.app.NavUtils:*.*(*) {
+}
+
+#threadmanipulation
+* <=android.os.Process:*setThreadPriority(*) {
+}
+
+#graphics
+* <=*android\.content\.ClipData.*:*.*(*) {
+}
+
+#uri
+* <=android.content.UriMatcher:*.*(*) {
+}
+
+#ui
+* <=android.content.ComponentName:unflattenFromString(*) {
+}
+
+#reflection
+* <=android.content.ComponentName:getClassName(*) {
+}
+
+#intent
+* <=android.content.ComponentName:<init>(*) {
+}
+
+#intent
+* <=android.content.ComponentName:getPackageName(*) {
+}
+
+#sharedMemory
+* <=android.os.MemoryFile:*.*(*) {
+}
+
+#secureCommunication
+* <=java.security.GuardedObject:*.*(*) {
+}
+
+#secureCommunication
+* <=java.security.SignedObject:*.*(*) {
+}
+
+#speechRecognizer
+* <=android.speech.SpeechRecognizer:*.*(*) {
+}
+
+#destructor
+* <=java.lang.Object:finalize(*) {
+}
+
+#exceptionHandling
+* <=java.lang.Throwable:*.*(*) {
+}
+
+#log
+* <=android.util.Printer:*.*(*) {
+}
+
+#constructor
+* <=*.*:*<init>.*(*) {
+}
+
+#constructor
+* <=*.*:clone(*) {
+}

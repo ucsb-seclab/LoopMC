@@ -1,0 +1,4 @@
+#contacturi Landroid/provider/ContactsContract$Contacts; CONTENT_URI
+#browserhistoryuri Landroid/provider/Browser; BOOKMARKS_UR
+#nfc Landroid/nfc/NfcAdapter; ACTION_NDEF_DISCOVERED
+#nfc Landroid/nfc/NfcAdapter; ACTION_TAG_DISCOVERED

@@ -1,0 +1,10 @@
+toString()Ljava/lang/String;=0=StringRep
+hasNext()Z=0=iterator
+iterator()Ljava/util/Iterator;=0=iterator
+hasMoreElements()Z=0=iterator
+contains()Z=0=iterator
+getClass()Ljava/lang/Class;=0=reflection
+containsKey()Z=0=iterator
+equals(Ljava/lang/Object;)Z=0=ObjectComparision
+compareTo(Ljava/lang/Object;)I=0=ObjectComparision
+hashCode()I=0=ObjectComparision

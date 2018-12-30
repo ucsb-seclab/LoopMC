@@ -1,0 +1,15 @@
+Lorg/apache/.*
+Lorg/jdom/.*
+Lcom/ice/tar/.*
+Lorg/bouncycastle/.*
+#Lorg/bouncycastle2/.*
+Landroid/support/v4/.*
+Lorg/mozilla/javascript/.*
+Lcom/google/zxing/.*
+Lcom/actionbarsherlock/.*
+Lcom/admob/android/ads/.*
+Lcom/google/protobuf/.*
+Lcom/dropbox/client2/.*
+Lorg/json/simple/.*
+Lorg/osmdroid/.*
+Lcom/mapquest/android/.*
