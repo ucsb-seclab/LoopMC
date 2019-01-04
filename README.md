@@ -27,7 +27,7 @@ We created a virtual box VM of Ubuntu 16.04, that contains the required dependen
 
 ### Importing and logging into the guest machine
 1. Make sure you have VirtualBox installed on your system.
-2. Download the VM (in OVA format) from here.
+2. Download the VM (in OVA format) from [here](https://drive.google.com/open?id=1Gt_HW7AWAqBQcPBrJ4UlDU4GWXPmRUAf).
 3. Import the Downloaded OVA into VirtualBox: `File` -> `Import Appliance` -> `specify the file path to the .ova file`.
 4. You can login using user: `loopmc` and password `loopmc`
 
